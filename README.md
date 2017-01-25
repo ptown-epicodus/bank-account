@@ -9,7 +9,7 @@
 
 ## Description
 
-This webpage allows a user to register for a new account and make and initial deposit. The user can then deposit or withdraw an amount, updating the visible account balance.
+This webpage allows a user to register for a new account and make an initial deposit. The user can then deposit or withdraw an amount, updating the visible account balance.
 
 ## Setup
 
