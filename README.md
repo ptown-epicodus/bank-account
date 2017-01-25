@@ -27,6 +27,10 @@ jQuery
 
 ## Specs
 
+* A user can create a new account.
+  * **Example Input**: Name: 'John Doe' Initial Deposit: '300'
+  * **Example Output**: Current Balance: $300.00
+
 ## Known Bugs
 
 _No known bugs or issues_
