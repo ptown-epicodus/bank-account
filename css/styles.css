@@ -1,3 +1,8 @@
+#show-accounts,
+#show-account {
+  display: none;
+}
+
 .account {
   cursor: pointer;
   color: blue;

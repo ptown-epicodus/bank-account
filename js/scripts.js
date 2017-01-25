@@ -26,6 +26,7 @@ var displayAccount = function(account) {
   } else {
     $("#show-name").text(account.customerName);
     $("#show-balance").text('$' + account.balance.toFixed(2));
+    $("#show-account").show();
   }
 };
 
@@ -67,6 +68,7 @@ $(document).ready(function() {
       currentAccount = accounts[index];
       displayAccount(currentAccount);
     });
+    $("#show-accounts").show();
   });
 
   $("form#edit-bank-account").submit(function(event) {
