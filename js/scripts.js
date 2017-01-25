@@ -1,4 +1,6 @@
 // Business logic
+var accounts = [];
+
 function BankAccount(name, deposit) {
   this.customerName = name;
   this.balance = deposit;
@@ -40,6 +42,7 @@ var validateNumber = function(value) {
   return false;
 };
 
+var i = 0;
 $(document).ready(function() {
   $("form#new-bank-account").submit(function(event) {
     event.preventDefault();
@@ -48,9 +51,22 @@ $(document).ready(function() {
     var inputtedDeposit = parseFloat($("#new-deposit").val());
 
     currentAccount = new BankAccount(inputtedName, inputtedDeposit);
+    accounts.push(currentAccount);
 
     resetFields("form#new-bank-account");
     displayAccount(currentAccount);
+
+    var addedAccount = currentAccount;
+    $("#show-accounts ul").append("<li id='account" + i + "'><span class='account'>" + currentAccount.customerName + "</span></li>");
+    i++;
+    $("#show-accounts li").last().click(function() {
+      var index = parseInt(this.id.match(/[0-9]+/)[0]);
+
+      resetFields("form#new-bank-account");
+      resetFields("form#edit-bank-account");
+      currentAccount = accounts[index];
+      displayAccount(currentAccount);
+    });
   });
 
   $("form#edit-bank-account").submit(function(event) {

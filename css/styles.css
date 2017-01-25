@@ -1,0 +1,8 @@
+.account {
+  cursor: pointer;
+  color: blue;
+}
+
+.account:hover {
+  text-decoration: underline;
+}

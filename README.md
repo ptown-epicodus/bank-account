@@ -33,6 +33,7 @@ jQuery
 * A user can deposit to and withdraw from his/her account.
   * **Example Input**: Deposit Amount: '100' Withdrawal Amount: '50' (Balance at $500)
   * **Example Output**: Current Balance: $550.00
+* Multiple accounts can be created. The account selected from the master list is the one displayed and edited by deposit/withdrawal
 
 ## Known Bugs
 
