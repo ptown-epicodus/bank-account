@@ -17,6 +17,7 @@ BankAccount.prototype.withdraw = function(amount) {
 
 // Interface logic
 var currentAccount = undefined; // BankAccount instance being edited/displayed
+
 var displayAccount = function(account) {
   if (account === undefined || account === null) {
     $("#show-account").hide();
@@ -29,7 +30,15 @@ var displayAccount = function(account) {
 // Reset all input fields within selector's context
 var resetFields = function(selector) {
   $(selector + ' input').val("");
-}
+};
+
+var validateNumber = function(value) {
+  if ((undefined === value) || (null === value))
+    return false;
+  if (typeof value == 'number')
+    return !isNaN(value);
+  return false;
+};
 
 $(document).ready(function() {
   $("form#new-bank-account").submit(function(event) {
@@ -50,8 +59,10 @@ $(document).ready(function() {
     var inputtedDeposit = parseFloat($("#deposit").val());
     var inputtedWithdrawal = parseFloat($("#withdrawal").val());
 
-    currentAccount.deposit(inputtedDeposit);
-    currentAccount.withdraw(inputtedWithdrawal);
+    if (validateNumber(inputtedDeposit))
+      currentAccount.deposit(inputtedDeposit);
+    if (validateNumber(inputtedWithdrawal))
+      currentAccount.withdraw(inputtedWithdrawal);
     resetFields("form#edit-bank-account");
     displayAccount(currentAccount);
   });
