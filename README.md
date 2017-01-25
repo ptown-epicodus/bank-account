@@ -30,6 +30,9 @@ jQuery
 * A user can create a new account.
   * **Example Input**: Name: 'John Doe' Initial Deposit: '300'
   * **Example Output**: Current Balance: $300.00
+* A user can deposit to and withdraw from his/her account.
+  * **Example Input**: Deposit Amount: '100' Withdrawal Amount: '50' (Balance at $500)
+  * **Example Output**: Current Balance: $550.00
 
 ## Known Bugs
 
